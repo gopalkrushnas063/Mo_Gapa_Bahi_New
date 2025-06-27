@@ -29,7 +29,7 @@ android {
 
     defaultConfig {
         applicationId = "com.krishnatechworld.mogapabahi"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34  // Can keep at 34 for Play Store compliance
         versionCode = 9
         versionName = "1.0.2"

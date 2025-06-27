@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:mogapabahi/features/content/view/content_screen.view.dart';
 import 'package:mogapabahi/features/introduction/view/introduction_page.dart';
 import 'package:mogapabahi/features/notification/view/notification_screen.dart';
@@ -15,6 +16,7 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await MobileAds.instance.initialize();
   OneSignalService.initializeOneSignal();
 
   runApp(
