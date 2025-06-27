@@ -1,0 +1,85 @@
+name: mogapabahi
+description: Mo Gapa Bahi Aap invites you into a captivating realm of storytelling that spans a myriad of genres and themes, transcending age barriers to cater to the diverse literary cravings of readers. This app serves as a versatile and engaging platform, offering a treasure trove of stories that fall into the realms of morality, inspiration, and adventure.
+
+publish_to: 'none' 
+
+version: 1.0.2+9
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  image_picker: ^1.1.2
+  zoom_widget: ^2.0.1
+  provider: ^6.1.2
+  http: ^1.2.2
+  cached_network_image: ^3.4.0
+  simple_ripple_animation: ^0.0.9
+  flutter_launcher_icons: ^0.13.1
+  transparent_image: ^2.0.1
+  just_audio: ^0.9.39
+  audio_video_progress_bar: ^2.0.3
+  dio: ^5.5.0+1
+  flutter_riverpod: ^2.5.1
+  path_provider: ^2.1.4
+  onesignal_flutter: ^5.2.2
+  fluttertoast: ^8.2.6
+  go_router: ^14.2.3
+  win32: ^5.9.0
+  url_launcher: ^6.3.1
+  share_plus: ^11.0.0
+  shimmer: ^3.0.0
+  shared_preferences: ^2.5.3
+  device_info_plus: ^11.5.0
+  package_info_plus: ^8.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+
+
+
+
+flutter:
+
+
+  assets:
+    - assets/images/
+    - assets/images/home_logo.png
+    - assets/music/
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  
+  #   - images/a_dot_ham.jpeg
+
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icon.png"  # Path to your square icon
+  adaptive_icon_background: "#ffffff"  # Background color
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
