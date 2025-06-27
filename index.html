@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="or">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ଓଡିଆ କାହାନୀ | Odia Story Collection</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #ff7f00; /* Orange color */
+        --primary-light: #ffe5cc;
+        --primary-dark: #e67300;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --white: #ffffff;
+        --gray-light: #f3f4f6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", "Arial", sans-serif;
+        background: var(--gray-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Language Switcher */
+      .language-switcher {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+      }
+
+      .language-btn {
+        background: var(--white);
+        border: 1px solid var(--primary-light);
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .language-btn:hover {
+        background: var(--primary-light);
+      }
+
+      .language-btn i {
+        color: var(--primary-color);
+      }
+
+      /* Navigation */
+      nav {
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+      }
+
+      .logo i {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+      }
+
+      .logo h1 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        background: var(--primary-light);
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #ffa64d, #ff7f00);
+        padding: 4rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+        color: var(--white);
+        position: relative;
+      }
+
+      .hero-content {
+        max-width: 600px;
+        animation: fadeIn 1s ease;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .hero-image {
+        width: 350px;
+        max-width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        animation: slideIn 1s ease;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.8rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--white);
+        color: var(--primary-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--white);
+        color: var(--white);
+        margin-left: 1rem;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Info Strip */
+      .info-strip {
+        display: flex;
+        justify-content: center;
+        background: var(--primary-light);
+        padding: 2rem 1rem;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        max-width: 300px;
+      }
+
+      .info-icon {
+        background: var(--primary-color);
+        color: var(--white);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .info-text strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        color: var(--primary-color);
+      }
+
+      /* Sections */
+      .section {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 1.5rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+        color: var(--primary-color);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 3px;
+      }
+
+      .section-header p {
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0.5rem auto 0;
+      }
+
+      /* Story Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .story-card {
+        background: var(--white);
+        border-radius: 0.8rem;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .story-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .story-image {
+        height: 180px;
+        background: var(--primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 3rem;
+      }
+
+      .story-content {
+        padding: 1.2rem;
+      }
+
+      .story-content h3 {
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+      }
+
+      .story-content p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .story-meta {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-light);
+        font-size: 0.8rem;
+      }
+
+      /* FAQ */
+      .faq {
+        background: var(--white);
+        border-radius: 0.8rem;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-top: 3rem;
+      }
+
+      .faq-item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1.5rem;
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .faq-question {
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .faq-question::after {
+        content: "+";
+        font-size: 1.2rem;
+      }
+
+      .faq-question.active::after {
+        content: "-";
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-answer.show {
+        max-height: 200px;
+      }
+
+      /* Contact Form */
+      .contact-form {
+        background: var(--white);
+        border-radius: 0.8rem;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        font-family: inherit;
+        transition: border 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 3rem 1rem 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--white);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: var(--white);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+      }
+
+      .footer-links a:hover {
+        opacity: 1;
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+
+      /* Page Sections */
+      .page-section {
+        display: none;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .page-section.active {
+        display: block;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .language-switcher {
+          top: 0.5rem;
+          right: 0.5rem;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 70px);
+          background: var(--white);
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0;
+          transition: all 0.3s ease;
+          box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero {
+          padding: 3rem 1.5rem;
+          text-align: center;
+        }
+
+        .hero h2 {
+          font-size: 2rem;
+        }
+
+        .btn-outline {
+          margin-left: 0;
+          margin-top: 1rem;
+          display: block;
+        }
+
+        .info-item {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+      <button class="language-btn" id="languageBtn">
+        <i class="fas fa-globe"></i>
+        <span id="currentLanguage">English</span>
+      </button>
+    </div>
+
+    <nav>
+      <a href="#home" class="logo">
+        <i class="fas fa-book-open"></i>
+        <h1 id="logoText">ମୋ ଗପ ବହି</h1>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="#home" class="nav-link active" data-lang="home">ମୂଳ</a>
+        </li>
+        <li>
+          <a href="#stories" class="nav-link" data-lang="stories">କାହାନୀ</a>
+        </li>
+        <li><a href="#faq" class="nav-link" data-lang="faq">ପ୍ରଶ୍ନୋତ୍ତର</a></li>
+        <li>
+          <a href="#contact" class="nav-link" data-lang="contact">ଯୋଗାଯୋଗ</a>
+        </li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section active">
+      <div class="hero">
+        <div class="hero-content">
+          <h2 id="heroTitle">ମୋ ଗପ ବହି - ପଢ଼ିବାର ଆନନ୍ଦ ଏବଂ କାହାଣୀ ଘର</h2>
+          <p id="heroText">
+            ମୋ ଗପ ବହି – ଏକ ମଜାଦାର ପଢ଼ିବାର ଅନୁଭୂତି! ଏଠାରେ ରୋମାଞ୍ଚକର ଗପ,
+            ଶିକ୍ଷାଦାୟକ କାହାଣୀ, ଏବଂ ମଜାଦାର ଛୋଟ ଗପ ପାଇବେ। ପିଲାଠାରୁ ବଡ଼ମାନଙ୍କ ପାଇଁ
+            ରଖାଯାଇଛି ବହୁତ ପସନ୍ଦର ବହି। ପଢ଼ିବାର ପ୍ରେମ ବଢ଼ାଅ, ଆଜି ଡାଉନଲୋଡ୍ କରନ୍ତୁ!
+            📚✨
+          </p>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.krishnatechworld.mogapabahi"
+            class="btn btn-primary"
+            id="storiesBtn"
+            target="_blank"
+            >ଡାଉନଲୋଡ୍ କରନ୍ତୁ</a
+          >
+          <!-- <a href="#contact" class="btn btn-outline" id="contactBtn"
+            >ଯୋଗାଯୋଗ କରନ୍ତୁ</a
+          > -->
+        </div>
+        <img
+          src="https://play-lh.googleusercontent.com/QIzlzWVTp0MLCQj-pjXwyyBlVCiLHKGD9zJmT4hSR2pWXw_J-yVlG_E7bTXxYzH8mhc=w832-h470-rw"
+          alt="Odia Story Books"
+          class="hero-image"
+        />
+      </div>
+
+      <div class="info-strip">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="info-text">
+            <strong id="deliveryTitle">ମନୋରଞ୍ଜନଭିତିକ</strong>
+            <p id="deliveryText">ମନୋରଞ୍ଜନରେ ଭରପୂର</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="info-text">
+            <strong id="paymentTitle">ସୁରକ୍ଷିତ ଆପ୍</strong>
+            <p id="paymentText">ସୁରକ୍ଷିତ ଭାବରେ ପଢ଼ନ୍ତୁ</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="info-text">
+            <strong id="qualityTitle">ଉତ୍ତମ କ୍ୱାଲିଟୀ</strong>
+            <p id="qualityText">ଉତ୍ତମ କ୍ୱାଲିଟୀ ନିଶ୍ଚିତା</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <h2 id="aboutTitle">ଆମ ବିଷୟରେ</h2>
+          <p id="aboutText">
+            ଓଡିଆ କାହାଣୀ ହେଉଛି ଓଡିଆ ଭାଷାର ପାରମ୍ପାରିକ ଏବଂ ଆଧୁନିକ କାହାଣୀଗୁଡିକର ଏକ
+            ସଂଗ୍ରହ। ଆମେ ଓଡିଆ ସାହିତ୍ୟକୁ ସମର୍ଥନ କରିବା ଏବଂ ପ୍ରଚାର କରିବା ପାଇଁ
+            ପ୍ରତିଶ୍ରୁତିବଦ୍ଧ।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="page-section">
+      <div class="section">
+        <div class="section-header">
+          <h2 id="storiesTitle">ଆମର କାହାଣୀ ସଂଗ୍ରହ</h2>
+          <p id="storiesText">
+            ଓଡିଆ ଭାଷାର ଶ୍ରେଷ୍ଠ କାହାଣୀଗୁଡିକ ଏଠାରେ ଉପଲବ୍ଧ। ନୂତନ କାହାଣୀଗୁଡିକ ନିୟମିତ
+            ଭାବରେ ଯୋଡା ଯାଉଛି।
+          </p>
+        </div>
+
+        <div class="grid">
+          <div class="story-card">
+            <div class="story-image">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="story-content">
+              <h3 id="story1Title">ଗୁୟାଁ ଓଡିଆରେ କାହାନୀ</h3>
+              <p id="story1Desc">ପାରମ୍ପାରିକ ଓଡିଆ କାହାଣୀଗୁଡିକର ସଂଗ୍ରହ</p>
+              <div class="story-meta">
+                <span
+                  ><i class="far fa-clock"></i>
+                  <span id="story1Time">30 ମିନିଟ୍</span></span
+                >
+                <span><i class="fas fa-star"></i> 4.8</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <i class="fas fa-child"></i>
+            </div>
+            <div class="story-content">
+              <h3 id="story2Title">ଶୁଣ୍ଯ ଓଡିଆର କାହାନୀ</h3>
+              <p id="story2Desc">ପିଲାମାନଙ୍କ ପାଇଁ ରୋଚକ କାହାଣୀଗୁଡିକ</p>
+              <div class="story-meta">
+                <span
+                  ><i class="far fa-clock"></i>
+                  <span id="story2Time">20 ମିନିଟ୍</span></span
+                >
+                <span><i class="fas fa-star"></i> 4.9</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="story-content">
+              <h3 id="story3Title">ଜ୍ଞାନକ କାହାନୀ</h3>
+              <p id="story3Desc">ଜ୍ଞାନବର୍ଧକ କାହାଣୀଗୁଡିକର ସଂଗ୍ରହ</p>
+              <div class="story-meta">
+                <span
+                  ><i class="far fa-clock"></i>
+                  <span id="story3Time">45 ମିନିଟ୍</span></span
+                >
+                <span><i class="fas fa-star"></i> 4.7</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-card">
+            <div class="story-image">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="story-content">
+              <h3 id="story4Title">ଉତ୍ସାହାସିକ କାହାନୀ</h3>
+              <p id="story4Desc">ପ୍ରେରଣାଦାୟକ କାହାଣୀଗୁଡିକ</p>
+              <div class="story-meta">
+                <span
+                  ><i class="far fa-clock"></i>
+                  <span id="story4Time">35 ମିନିଟ୍</span></span
+                >
+                <span><i class="fas fa-star"></i> 4.8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="page-section">
+      <div class="section">
+        <div class="section-header">
+          <h2 id="faqTitle">ପ୍ରଶ୍ନୋତ୍ତର</h2>
+          <p id="faqText">ଆପଣଙ୍କର ସାଧାରଣ ପ୍ରଶ୍ନଗୁଡିକର ଉତ୍ତର ଏଠାରେ ଦିଆଯାଇଛି</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item">
+            <div class="faq-question" id="question1">
+              କାହାନୀ କିଏଭେ ପଢିପାରିବେ?
+            </div>
+            <div class="faq-answer">
+              <p id="answer1">
+                ଆମ ଓଡିଆ କାହାଣୀ ପୃଷ୍ଠାଗୁଡିକ ଆମ ବେବସାଇଟରେ ଉପଲବ୍ଧ ଅଛି। ଆପଣ ଯେକୌଣସି
+                ଡିଭାଇସରେ ଏହାକୁ ପଢିପାରିବେ - ସ୍ମାର୍ଟଫୋନ, ଟାବଲେଟ କିମ୍ବା କମ୍ପ୍ୟୁଟର।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" id="question2">
+              ନୂତନ କାହାନୀ କିଏଭେ ପାଇବେ?
+            </div>
+            <div class="faq-answer">
+              <p id="answer2">
+                ଆମେ ପ୍ରତି ସପ୍ତାହରେ ନୂତନ କାହାଣୀ ଯୋଡୁ। ନୂଆ କାହାଣୀ ଆସିଲେ ଆମର
+                ନ୍ୟୁଜଲେଟର ପାଇବା ପାଇଁ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" id="question3">
+              କାହାଣୀ ଡାଉନଲୋଡ୍ କରିପାରିବେ କି?
+            </div>
+            <div class="faq-answer">
+              <p id="answer3">
+                ହଁ, ଆମର ପ୍ରିମିୟମ ସଦସ୍ୟମାନେ କାହାଣୀଗୁଡିକ PDF ଆକାରରେ ଡାଉନଲୋଡ୍
+                କରିପାରିବେ। ମାଗଣା ସଦସ୍ୟମାନେ କେବଳ ଅନଲାଇନରେ ପଢିପାରିବେ।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+      <div class="section">
+        <div class="section-header">
+          <h2 id="contactTitle">ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ</h2>
+          <p id="contactText">
+            ଆପଣଙ୍କର ପ୍ରଶ୍ନ, ମତାମତ କିମ୍ବା ସହଯୋଗ ପାଇଁ ଆମକୁ ଲେଖନ୍ତୁ
+          </p>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name" id="nameLabel">ନାମ</label>
+              <input type="text" id="name" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="email" id="emailLabel">ଇମେଲ</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="subject" id="subjectLabel">ବିଷୟ</label>
+              <input type="text" id="subject" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="message" id="messageLabel">ବାର୍ତ୍ତା</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width: 100%"
+              id="submitBtn"
+            >
+              ପଠାନ୍ତୁ
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 id="footerAboutTitle">ଓଡିଆ କାହାଣୀ</h3>
+          <p id="footerAboutText">
+            ଓଡିଆ ଭାଷା ଓ ସାହିତ୍ୟକୁ ପ୍ରଚାର କରିବାର ଆମର ଲକ୍ଷ୍ୟ। ଆମେ ଓଡିଆ କାହାଣୀର ଏକ
+            ବିଶାଳ ସଂଗ୍ରହ ପ୍ରଦାନ କରୁ।
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3 id="footerLinksTitle">ଲିଙ୍କ୍‌ଗୁଡିକ</h3>
+          <ul class="footer-links">
+            <li><a href="#home" id="footerHomeLink">ମୂଳପୃଷ୍ଠା</a></li>
+            <li><a href="#stories" id="footerStoriesLink">କାହାଣୀଗୁଡିକ</a></li>
+            <li><a href="#faq" id="footerFaqLink">ପ୍ରଶ୍ନୋତ୍ତର</a></li>
+            <li><a href="#contact" id="footerContactLink">ଯୋଗାଯୋଗ</a></li>
+          </ul>
+        </div>
+        <!-- <div class="footer-column">
+          <h3 id="footerHelpTitle">ସହାୟତା</h3>
+          <ul class="footer-links">
+            <li><a href="#" id="footerTermsLink">ସେବା ଶର୍ତ୍ତ</a></li>
+            <li><a href="#" id="footerPrivacyLink">ଗୋପନୀୟତା ନୀତି</a></li>
+            <li><a href="#" id="footerRefundLink">ରିଫଣ୍ଡ ନୀତି</a></li>
+            <li><a href="#" id="footerDeliveryLink">ଡିଲିଭରୀ ସୂଚନା</a></li>
+          </ul>
+        </div> -->
+        <div class="footer-column">
+          <h3 id="footerContactTitle">ଯୋଗାଯୋଗ</h3>
+          <ul class="footer-links">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="footerAddress">ଭୁବନେଶ୍ୱର, ଓଡିଶା</span>
+            </li>
+            <li><i class="fas fa-phone"></i> +91 9937220643</li>
+            <li><i class="fas fa-envelope"></i> gopalkrushnas063@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <span id="copyrightText"
+          >&copy; 2024 ଓଡିଆ କାହାଣୀ | ସବୁ ଅଧିକାର ସଂରକ୍ଷିତ</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      // Language translations
+      const translations = {
+        en: {
+          logoText: "Mo Gapa Bahi",
+          home: "Home",
+          stories: "Stories",
+          faq: "FAQ",
+          contact: "Contact",
+          heroTitle: "Mo Gapa Bahi – Ignite a love for reading",
+          heroText:
+            "Mo Gapa Bahi – A fun reading experience! Enjoy thrilling tales, educational stories, and entertaining short reads. Perfect for kids and adults. Ignite your love for reading—download now!",
+          storiesBtn: "Download Now",
+          contactBtn: "Contact Us",
+          deliveryTitle: "The Entertainment Box",
+          deliveryText: "Full of Entertainment",
+          paymentTitle: "Secure Story Reading App",
+          paymentText: "A Secure App to Read Any Story, Anytime",
+          qualityTitle: "Premium Quality",
+          qualityText: "High quality content guaranteed",
+          aboutTitle: "About Us",
+          aboutText:
+            "Odia Stories is a collection of traditional and modern stories in Odia language. We are committed to supporting and promoting Odia literature.",
+          storiesTitle: "Our Story Collection",
+          storiesText:
+            "The best Odia language stories available here. New stories are added regularly.",
+          story1Title: "Traditional Odia Stories",
+          story1Desc: "Collection of traditional Odia stories",
+          story1Time: "30 mins",
+          story2Title: "Children's Stories",
+          story2Desc: "Interesting stories for children",
+          story2Time: "20 mins",
+          story3Title: "Knowledge Stories",
+          story3Desc: "Collection of knowledge enhancing stories",
+          story3Time: "45 mins",
+          story4Title: "Inspirational Stories",
+          story4Desc: "Motivational stories for everyone",
+          story4Time: "35 mins",
+          faqTitle: "Frequently Asked Questions",
+          faqText: "Answers to your common questions are available here",
+          question1: "How can I read the stories?",
+          answer1:
+            "Our Odia stories are available on our website. You can read them on any device - smartphone, tablet or computer.",
+          question2: "How to get new stories?",
+          answer2:
+            "We add new stories every week. Subscribe to our newsletter to get updates when new stories arrive.",
+          question3: "Can I download the stories?",
+          answer3:
+            "Yes, our premium members can download stories in PDF format. Free members can only read online.",
+          contactTitle: "Contact Us",
+          contactText: "Write to us for any questions, feedback or support",
+          nameLabel: "Name",
+          emailLabel: "Email",
+          subjectLabel: "Subject",
+          messageLabel: "Message",
+          submitBtn: "Submit",
+          footerAboutTitle: "Odia Stories",
+          footerAboutText:
+            "Our aim is to promote Odia language and literature. We provide a vast collection of Odia stories.",
+          footerLinksTitle: "Quick Links",
+          footerHomeLink: "Home",
+          footerStoriesLink: "Stories",
+          footerFaqLink: "FAQ",
+          footerContactLink: "Contact",
+          footerHelpTitle: "Help",
+          footerTermsLink: "Terms of Service",
+          footerPrivacyLink: "Privacy Policy",
+          footerRefundLink: "Refund Policy",
+          footerDeliveryLink: "Delivery Info",
+          footerContactTitle: "Contact",
+          footerAddress: "Bhubaneswar, Odisha",
+          copyrightText: "© 2024 Odia Stories | All Rights Reserved",
+        },
+        or: {
+          logoText: "ଓଡିଆ କାହାନୀ",
+          home: "ମୂଳ",
+          stories: "କାହାନୀ",
+          faq: "ପ୍ରଶ୍ନୋତ୍ତର",
+          contact: "ଯୋଗାଯୋଗ",
+          heroTitle: "ମୋ ଗପ ବହି - ପଢ଼ିବାର ଆନନ୍ଦ ଏବଂ କାହାଣୀ ଘର",
+          heroText:
+            "ମୋ ଗପ ବହି – ଏକ ମଜାଦାର ପଢ଼ିବାର ଅନୁଭୂତି! ଏଠାରେ ରୋମାଞ୍ଚକର ଗପ, ଶିକ୍ଷାଦାୟକ କାହାଣୀ, ଏବଂ ମଜାଦାର ଛୋଟ ଗପ ପାଇବେ। ପିଲାଠାରୁ ବଡ଼ମାନଙ୍କ ପାଇଁ ରଖାଯାଇଛି ବହୁତ ପସନ୍ଦର ବହି। ପଢ଼ିବାର ପ୍ରେମ ବଢ଼ାଅ, ଆଜି ଡାଉନଲୋଡ୍ କରନ୍ତୁ! 📚✨",
+          storiesBtn: "ଡାଉନଲୋଡ୍ କରନ୍ତୁ",
+          contactBtn: "ଯୋଗାଯୋଗ କରନ୍ତୁ",
+          deliveryTitle: "ମନୋରଞ୍ଜନଭିତିକ",
+          deliveryText: "ମନୋରଞ୍ଜନରେ ଭରପୂର",
+          paymentTitle: "ସୁରକ୍ଷିତ ଗପ ପଢ଼ିବାର ଆପ୍",
+          paymentText: "ଯେକୈଣସି ଗପ କୌଣସି ସମୟରେ ସୁରକ୍ଷିତ ଭାବରେ ପଢ଼ନ୍ତୁ",
+          qualityTitle: "ଉତ୍ତମ କ୍ୱାଲିଟୀ",
+          qualityText: "ଉତ୍ତମ କ୍ୱାଲିଟୀ ନିଶ୍ଚିତା",
+          aboutTitle: "ଆମ ବିଷୟରେ",
+          aboutText:
+            "ଓଡିଆ କାହାଣୀ ହେଉଛି ଓଡିଆ ଭାଷାର ପାରମ୍ପାରିକ ଏବଂ ଆଧୁନିକ କାହାଣୀଗୁଡିକର ଏକ ସଂଗ୍ରହ। ଆମେ ଓଡିଆ ସାହିତ୍ୟକୁ ସମର୍ଥନ କରିବା ଏବଂ ପ୍ରଚାର କରିବା ପାଇଁ ପ୍ରତିଶ୍ରୁତିବଦ୍ଧ।",
+          storiesTitle: "ଆମର କାହାଣୀ ସଂଗ୍ରହ",
+          storiesText:
+            "ଓଡିଆ ଭାଷାର ଶ୍ରେଷ୍ଠ କାହାଣୀଗୁଡିକ ଏଠାରେ ଉପଲବ୍ଧ। ନୂତନ କାହାଣୀଗୁଡିକ ନିୟମିତ ଭାବରେ ଯୋଡା ଯାଉଛି।",
+          story1Title: "ଗୁୟାଁ ଓଡିଆରେ କାହାନୀ",
+          story1Desc: "ପାରମ୍ପାରିକ ଓଡିଆ କାହାଣୀଗୁଡିକର ସଂଗ୍ରହ",
+          story1Time: "30 ମିନିଟ୍",
+          story2Title: "ଶୁଣ୍ଯ ଓଡିଆର କାହାନୀ",
+          story2Desc: "ପିଲାମାନଙ୍କ ପାଇଁ ରୋଚକ କାହାଣୀଗୁଡିକ",
+          story2Time: "20 ମିନିଟ୍",
+          story3Title: "ଜ୍ଞାନକ କାହାନୀ",
+          story3Desc: "ଜ୍ଞାନବର୍ଧକ କାହାଣୀଗୁଡିକର ସଂଗ୍ରହ",
+          story3Time: "45 ମିନିଟ୍",
+          story4Title: "ଉତ୍ସାହାସିକ କାହାନୀ",
+          story4Desc: "ପ୍ରେରଣାଦାୟକ କାହାଣୀଗୁଡିକ",
+          story4Time: "35 ମିନିଟ୍",
+          faqTitle: "ପ୍ରଶ୍ନୋତ୍ତର",
+          faqText: "ଆପଣଙ୍କର ସାଧାରଣ ପ୍ରଶ୍ନଗୁଡିକର ଉତ୍ତର ଏଠାରେ ଦିଆଯାଇଛି",
+          question1: "କାହାନୀ କିଏଭେ ପଢିପାରିବେ?",
+          answer1:
+            "ଆମ ଓଡିଆ କାହାଣୀ ପୃଷ୍ଠାଗୁଡିକ ଆମ ବେବସାଇଟରେ ଉପଲବ୍ଧ ଅଛି। ଆପଣ ଯେକୌଣସି ଡିଭାଇସରେ ଏହାକୁ ପଢିପାରିବେ - ସ୍ମାର୍ଟଫୋନ, ଟାବଲେଟ କିମ୍ବା କମ୍ପ୍ୟୁଟର।",
+          question2: "ନୂତନ କାହାନୀ କିଏଭେ ପାଇବେ?",
+          answer2:
+            "ଆମେ ପ୍ରତି ସପ୍ତାହରେ ନୂତନ କାହାଣୀ ଯୋଡୁ। ନୂଆ କାହାଣୀ ଆସିଲେ ଆମର ନ୍ୟୁଜଲେଟର ପାଇବା ପାଇଁ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+          question3: "କାହାଣୀ ଡାଉନଲୋଡ୍ କରିପାରିବେ କି?",
+          answer3:
+            "ହଁ, ଆମର ପ୍ରିମିୟମ ସଦସ୍ୟମାନେ କାହାଣୀଗୁଡିକ PDF ଆକାରରେ ଡାଉନଲୋଡ୍ କରିପାରିବେ। ମାଗଣା ସଦସ୍ୟମାନେ କେବଳ ଅନଲାଇନରେ ପଢିପାରିବେ।",
+          contactTitle: "ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ",
+          contactText: "ଆପଣଙ୍କର ପ୍ରଶ୍ନ, ମତାମତ କିମ୍ବା ସହଯୋଗ ପାଇଁ ଆମକୁ ଲେଖନ୍ତୁ",
+          nameLabel: "ନାମ",
+          emailLabel: "ଇମେଲ",
+          subjectLabel: "ବିଷୟ",
+          messageLabel: "ବାର୍ତ୍ତା",
+          submitBtn: "ପଠାନ୍ତୁ",
+          footerAboutTitle: "ଓଡିଆ କାହାଣୀ",
+          footerAboutText:
+            "ଓଡିଆ ଭାଷା ଓ ସାହିତ୍ୟକୁ ପ୍ରଚାର କରିବାର ଆମର ଲକ୍ଷ୍ୟ। ଆମେ ଓଡିଆ କାହାଣୀର ଏକ ବିଶାଳ ସଂଗ୍ରହ ପ୍ରଦାନ କରୁ।",
+          footerLinksTitle: "ଲିଙ୍କ୍‌ଗୁଡିକ",
+          footerHomeLink: "ମୂଳପୃଷ୍ଠା",
+          footerStoriesLink: "କାହାଣୀଗୁଡିକ",
+          footerFaqLink: "ପ୍ରଶ୍ନୋତ୍ତର",
+          footerContactLink: "ଯୋଗାଯୋଗ",
+          footerHelpTitle: "ସହାୟତା",
+          footerTermsLink: "ସେବା ଶର୍ତ୍ତ",
+          footerPrivacyLink: "ଗୋପନୀୟତା ନୀତି",
+          footerRefundLink: "ରିଫଣ୍ଡ ନୀତି",
+          footerDeliveryLink: "ଡିଲିଭରୀ ସୂଚନା",
+          footerContactTitle: "ଯୋଗାଯୋଗ",
+          footerAddress: "ଭୁବନେଶ୍ୱର, ଓଡିଶା",
+          copyrightText: "© 2024 ଓଡିଆ କାହାଣୀ | ସବୁ ଅଧିକାର ସଂରକ୍ଷିତ",
+        },
+      };
+
+      // Current language - initialize based on HTML lang attribute
+      let currentLang = document.documentElement.lang || "or";
+
+      // Set initial language button text
+      const currentLanguageSpan = document.getElementById("currentLanguage");
+      currentLanguageSpan.textContent =
+        currentLang === "or" ? "Odia" : "English";
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Navigation between sections
+      const navLinksAll = document.querySelectorAll(".nav-link");
+      const pageSections = document.querySelectorAll(".page-section");
+
+      navLinksAll.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Remove active class from all links and sections
+          navLinksAll.forEach((l) => l.classList.remove("active"));
+          pageSections.forEach((section) => section.classList.remove("active"));
+
+          // Add active class to clicked link
+          link.classList.add("active");
+
+          // Show corresponding section
+          const target = link.getAttribute("href");
+          document.querySelector(target).classList.add("active");
+
+          // Close mobile menu if open
+          navLinks.classList.remove("active");
+
+          // Scroll to top of the section
+          document.querySelector(target).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          question.classList.toggle("active");
+          const answer = question.nextElementSibling;
+          answer.classList.toggle("show");
+        });
+      });
+
+      // Form submission
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(
+          currentLang === "or"
+            ? "ଆପଣଙ୍କର ବାର୍ତ୍ତା ପଠାଯାଇଛି! ଆମେ ଶୀଘ୍ର ଆପଣଙ୍କୁ ଜବାବ ଦେବୁ।"
+            : "Your message has been sent! We will respond soon."
+        );
+        contactForm.reset();
+      });
+
+      // Language switcher
+      const languageBtn = document.getElementById("languageBtn");
+
+      languageBtn.addEventListener("click", () => {
+        currentLang = currentLang === "or" ? "en" : "or";
+        currentLanguageSpan.textContent =
+          currentLang === "or" ? "Odia" : "English";
+        updateLanguage();
+      });
+
+      // Update all text elements based on current language
+      function updateLanguage() {
+        const langData = translations[currentLang];
+
+        // Update all elements with translations
+        document.getElementById("logoText").textContent = langData.logoText;
+
+        // Update nav links
+        document.querySelectorAll("[data-lang]").forEach((el) => {
+          const key = el.getAttribute("data-lang");
+          el.textContent = langData[key];
+        });
+
+        // Update other elements
+        document.getElementById("heroTitle").textContent = langData.heroTitle;
+        document.getElementById("heroText").textContent = langData.heroText;
+        document.getElementById("storiesBtn").textContent = langData.storiesBtn;
+        document.getElementById("contactBtn").textContent = langData.contactBtn;
+        document.getElementById("deliveryTitle").textContent =
+          langData.deliveryTitle;
+        document.getElementById("deliveryText").textContent =
+          langData.deliveryText;
+        document.getElementById("paymentTitle").textContent =
+          langData.paymentTitle;
+        document.getElementById("paymentText").textContent =
+          langData.paymentText;
+        document.getElementById("qualityTitle").textContent =
+          langData.qualityTitle;
+        document.getElementById("qualityText").textContent =
+          langData.qualityText;
+        document.getElementById("aboutTitle").textContent = langData.aboutTitle;
+        document.getElementById("aboutText").textContent = langData.aboutText;
+        document.getElementById("storiesTitle").textContent =
+          langData.storiesTitle;
+        document.getElementById("storiesText").textContent =
+          langData.storiesText;
+        document.getElementById("story1Title").textContent =
+          langData.story1Title;
+        document.getElementById("story1Desc").textContent = langData.story1Desc;
+        document.getElementById("story1Time").textContent = langData.story1Time;
+        document.getElementById("story2Title").textContent =
+          langData.story2Title;
+        document.getElementById("story2Desc").textContent = langData.story2Desc;
+        document.getElementById("story2Time").textContent = langData.story2Time;
+        document.getElementById("story3Title").textContent =
+          langData.story3Title;
+        document.getElementById("story3Desc").textContent = langData.story3Desc;
+        document.getElementById("story3Time").textContent = langData.story3Time;
+        document.getElementById("story4Title").textContent =
+          langData.story4Title;
+        document.getElementById("story4Desc").textContent = langData.story4Desc;
+        document.getElementById("story4Time").textContent = langData.story4Time;
+        document.getElementById("faqTitle").textContent = langData.faqTitle;
+        document.getElementById("faqText").textContent = langData.faqText;
+        document.getElementById("question1").textContent = langData.question1;
+        document.getElementById("answer1").textContent = langData.answer1;
+        document.getElementById("question2").textContent = langData.question2;
+        document.getElementById("answer2").textContent = langData.answer2;
+        document.getElementById("question3").textContent = langData.question3;
+        document.getElementById("answer3").textContent = langData.answer3;
+        document.getElementById("contactTitle").textContent =
+          langData.contactTitle;
+        document.getElementById("contactText").textContent =
+          langData.contactText;
+        document.getElementById("nameLabel").textContent = langData.nameLabel;
+        document.getElementById("emailLabel").textContent = langData.emailLabel;
+        document.getElementById("subjectLabel").textContent =
+          langData.subjectLabel;
+        document.getElementById("messageLabel").textContent =
+          langData.messageLabel;
+        document.getElementById("submitBtn").textContent = langData.submitBtn;
+        document.getElementById("footerAboutTitle").textContent =
+          langData.footerAboutTitle;
+        document.getElementById("footerAboutText").textContent =
+          langData.footerAboutText;
+        document.getElementById("footerLinksTitle").textContent =
+          langData.footerLinksTitle;
+        document.getElementById("footerHomeLink").textContent =
+          langData.footerHomeLink;
+        document.getElementById("footerStoriesLink").textContent =
+          langData.footerStoriesLink;
+        document.getElementById("footerFaqLink").textContent =
+          langData.footerFaqLink;
+        document.getElementById("footerContactLink").textContent =
+          langData.footerContactLink;
+        document.getElementById("footerHelpTitle").textContent =
+          langData.footerHelpTitle;
+        document.getElementById("footerTermsLink").textContent =
+          langData.footerTermsLink;
+        document.getElementById("footerPrivacyLink").textContent =
+          langData.footerPrivacyLink;
+        document.getElementById("footerRefundLink").textContent =
+          langData.footerRefundLink;
+        document.getElementById("footerDeliveryLink").textContent =
+          langData.footerDeliveryLink;
+        document.getElementById("footerContactTitle").textContent =
+          langData.footerContactTitle;
+        document.getElementById("footerAddress").textContent =
+          langData.footerAddress;
+        document.getElementById("copyrightText").textContent =
+          langData.copyrightText;
+      }
+
+      // Call updateLanguage immediately to set initial translations
+      updateLanguage();
+
+      // Show home section by default on page load
+      window.addEventListener("load", () => {
+        document.querySelector("#home").classList.add("active");
+      });
+    </script>
+  </body>
+</html>
